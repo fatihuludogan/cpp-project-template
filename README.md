@@ -11,7 +11,6 @@ This is a template for C++ projects. What you get:
 - Use of modern CMake for building and compiling
 - External libraries installed and managed by
   - [CPM](https://github.com/cpm-cmake/CPM.cmake) Package Manager OR
-  - [Conan](https://conan.io/) Package Manager OR
   - [VCPKG](https://github.com/microsoft/vcpkg) Package Manager
 - Unit testing using [Catch2](https://github.com/catchorg/Catch2) v2
 - General purpose libraries: [JSON](https://github.com/nlohmann/json), [spdlog](https://github.com/gabime/spdlog), [cxxopts](https://github.com/jarro2783/cxxopts) and [fmt](https://github.com/fmtlib/fmt)
@@ -61,7 +60,7 @@ Library code goes into [src/](src/), main program code in [app/](app) and tests 
 First, clone this repo and do the preliminary work:
 
 ```shell
-git clone --recursive https://github.com/franneck94/CppProjectTemplate
+git clone --recursive https://github.com/fatihuludogan/cpp-project-template
 make prepare
 ```
 
