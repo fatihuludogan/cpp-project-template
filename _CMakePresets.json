@@ -15,31 +15,6 @@
             "installDir": "${sourceDir}/out/install/${presetName}"
         },
         {
-            "name": "conf-windows-common",
-            "description": "Windows settings for MSBuild toolchain.",
-            "hidden": true,
-            "inherits": "conf-common",
-            "condition": {
-                "type": "equals",
-                "lhs": "${hostSystemName}",
-                "rhs": "Windows"
-            },
-            "architecture": {
-                "value": "x64",
-                "strategy": "external"
-            },
-            "toolset": {
-                "value": "host=x64",
-                "strategy": "external"
-            },
-            "cacheVariables": {
-                "ENABLE_COVERAGE": "FALSE",
-                "ENABLE_SANITIZE_UNDEF": "FALSE",
-                "ENABLE_SANITIZE_LEAK": "FALSE",
-                "ENABLE_SANITIZE_THREAD": "FALSE"
-            }
-        },
-        {
             "name": "conf-unix-common",
             "description": "Unix-like OS settings for gcc and clang toolchains",
             "hidden": true,
@@ -51,28 +26,6 @@
                     "Linux",
                     "Darwin"
                 ]
-            }
-        },
-        {
-            "name": "windows-msvc-debug-mode",
-            "displayName": "msvc Debug",
-            "description": "Target Windows (MSVC), debug build type",
-            "inherits": "conf-windows-common",
-            "cacheVariables": {
-                "CMAKE_C_COMPILER": "cl",
-                "CMAKE_CXX_COMPILER": "cl",
-                "CMAKE_BUILD_TYPE": "Debug"
-            }
-        },
-        {
-            "name": "windows-msvc-release-mode",
-            "displayName": "msvc Release",
-            "description": "Target Windows (MSVC), release build type",
-            "inherits": "conf-windows-common",
-            "cacheVariables": {
-                "CMAKE_C_COMPILER": "cl",
-                "CMAKE_CXX_COMPILER": "cl",
-                "CMAKE_BUILD_TYPE": "RelWithDebInfo"
             }
         },
         {

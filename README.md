@@ -51,10 +51,10 @@ Library code goes into [src/](src/), main program code in [app/](app) and tests 
 - CMake 3.21+
 - GNU Makefile
 - Doxygen
-- Conan or VCPKG
+- VCPKG
 - MSVC 2017 (or higher), G++9 (or higher), Clang++9 (or higher)
 - Optional: Code Coverage (only on GNU|Clang): lcov, gcovr
-- Optional: Makefile, Doxygen, Conan, VCPKG
+- Optional: Makefile, Doxygen, VCPKG
 
 ## Building
 

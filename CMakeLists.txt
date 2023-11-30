@@ -7,12 +7,12 @@ project(
 
 # Global CMake variables are set here
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Options
-option(USE_CONAN "Whether to use Conan." OFF)
 option(USE_VCPKG "Whether to use VCPKG." ON)
 option(USE_CPM "Whether to use CPM." ON)
 
@@ -69,21 +69,12 @@ endif()
 
 # EXTERNAL LIBRARIES
 
-if(USE_CONAN)
-    message(STATUS "Using Conan")
-    include(${CMAKE_BINARY_DIR}/conan_toolchain.cmake)
-    find_package(nlohmann_json REQUIRED)
-    find_package(fmt REQUIRED)
-    find_package(spdlog REQUIRED)
-    find_package(Catch2 REQUIRED)
-    find_package(cxxopts REQUIRED)
-elseif(USE_VCPKG)
+if(USE_VCPKG)
     message(STATUS "Using VCPKG")
     include(${CMAKE_TOOLCHAIN_FILE})
     find_package(nlohmann_json REQUIRED)
     find_package(fmt REQUIRED)
     find_package(spdlog REQUIRED)
-    find_package(Catch2 REQUIRED)
     find_package(cxxopts REQUIRED)
     find_package(GTest REQUIRED)
 else(USE_CPM)
@@ -91,7 +82,6 @@ else(USE_CPM)
     include(CPM)
     cpmaddpackage("gh:fmtlib/fmt#9.1.0")
     cpmaddpackage("gh:nlohmann/json@3.11.2")
-    cpmaddpackage("gh:catchorg/Catch2@2.13.9")
     cpmaddpackage("gh:jarro2783/cxxopts@3.1.1")
     cpmaddpackage("gh:gabime/spdlog@1.11.0")
     cpmaddpackage("gh:google/googletest@1.14.0")
