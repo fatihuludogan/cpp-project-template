@@ -2,24 +2,24 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Executable Call",
-            "type": "shell",
-            "command": [
-                "${workspaceFolder}/build/bin/main"
-            ],
+            "type": "cppbuild",
+            "label": "clang++ build active file",
+            "command": "/usr/bin/clang++",
             "args": [
                 "--verbose",
-                "true",
-                "--filename",
-                "${workspaceFolder}/app/test.json"
+                "-fdiagnostics-color=always",
+                "-g", //-g3
+                "-Wall",
+                "${fileDirname}/*.cpp",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
+            "options": {
+                "cwd": "${fileDirname}"
             },
-            "problemMatcher": [
-                "$gcc"
-            ]
+            "problemMatcher": ["$gcc"],
+            "group": "build",
+            "detail": "compiler: /usr/bin/clang++"
         }
     ]
 }

@@ -19,6 +19,10 @@
             "version>=": "2.13.9"
         },
         {
+            "name": "gtest",
+            "version>=": "1.13.0"
+        },
+        {
             "name": "cxxopts",
             "version>=": "3.1.1"
         }
